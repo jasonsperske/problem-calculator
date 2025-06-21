@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        The Problem Calculator
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <input type="text" id="display">
+        <button data-action="clear" style="grid-area: clear;">AC</button>
+        <button data-action="mode" style="grid-area: negate;">+/-</button>
+        <button data-action="mode" style="grid-area: percent;">%</button>
+        <button data-action="operator" style="grid-area: divide;" class="arithmetic">÷</button>
+        <button data-action="number" style="grid-area: seven;">7</button>
+        <button data-action="number" style="grid-area: eight;">8</button>
+        <button data-action="number" style="grid-area: nine;">9</button>
+        <button data-action="operator" style="grid-area: multiply;" class="arithmetic">&times;</button>
+        <button data-action="number" style="grid-area: four;">4</button>
+        <button data-action="number" style="grid-area: five;">5</button>
+        <button data-action="number" style="grid-area: six;">6</button>
+        <button data-action="operator" style="grid-area: subtract;" class="arithmetic">&minus;</button>
+        <button data-action="number" style="grid-area: one;">1</button>
+        <button data-action="number" style="grid-area: two;">2</button>
+        <button data-action="number" style="grid-area: three;">3</button>
+        <button data-action="operator" style="grid-area: add;" class="arithmetic">&plus;</button>
+        <button data-action="mode" style="grid-area: mode;" class="undefined">🖩</button>
+        <button data-action="number" style="grid-area: zero;">0</button>
+        <button data-action="number" style="grid-area: decimal;">.</button>
+        <button data-action="execute" style="grid-area: equal;">=</button>
+    </main>
+</body>
+
+</html>

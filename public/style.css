@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+}
+main {
+    display: grid;
+    grid-template: "display display display display"
+    "clear negate percent divide"
+    "seven eight nine multiply"
+    "four five six subtract"
+    "one two three add"
+    "mode zero decimal equal"
+    / 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    aspect-ratio: 5/7; 
+}
+
+input {
+    grid-area: display;
+    color: #f0f0f0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+button {
+    background-color: #222;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #333;
+}
+button[data-action="operator"] {
+    background-color: #666;
+}
+button[data-action="operator"].arithmetic, button[data-action="execute"] {
+    background-color: #ff9500;    
+}
+button.undefined {
+    opacity: 0.3;
+    cursor: help;
+}
