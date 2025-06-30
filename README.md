@@ -8,4 +8,4 @@ A slightly useless calculator and gets worse the longer you use use.
 
 ISC
 
-Do whatever you like iwith it. It was fun making it.
+Do whatever you like with it. It was fun making it.
