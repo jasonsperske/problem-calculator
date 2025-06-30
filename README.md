@@ -1,30 +1,95 @@
-# Problem Calculator - Express App with EJS
+# Problem Calculator
 
-A modern calcualtor for a modern age. This si a calcualtor that learns with you.
+A web application featuring both a calculator and ChatGPT-powered text evaluation.
 
 ## Features
 
-- **Powered by OpenAI** to not only answer your questions but also adapt to you
+### Calculator
 
+- Basic arithmetic operations
+- Modern UI with responsive design
 
-## Installation
+### ChatGPT Text Evaluation
+
+- Send text to ChatGPT for evaluation
+- Customizable prompts
+- JSON API endpoint for programmatic access
+
+## Setup
 
 1. Install dependencies:
-   ```bash
-   npm install
-   ```
 
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm install
+```
 
-3. Or start the production server:
-   ```bash
-   npm start
-   ```
+2. Set up your OpenAI API key:
+
+```bash
+# Windows PowerShell
+$env:OPENAI_API_KEY="your-openai-api-key-here"
+
+# Or create a .env file (recommended for production)
+echo "OPENAI_API_KEY=your-openai-api-key-here" > .env
+```
+
+3. Start the server:
+
+```bash
+npm start
+```
 
 4. Open your browser and navigate to `http://localhost:3000`
+
+## API Usage
+
+### POST /evaluate
+
+Send text to ChatGPT for evaluation.
+
+**Request Body:**
+
+```json
+{
+  "text": "Your text to evaluate",
+  "customPrompt": "Optional custom prompt (default: 'Please evaluate the following text and provide a detailed analysis:')"
+}
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "originalText": "Your text to evaluate",
+  "customPrompt": "Your custom prompt",
+  "evaluation": "ChatGPT's evaluation response",
+  "timestamp": "2024-01-01T12:00:00.000Z"
+}
+```
+
+**Example using curl:**
+
+```bash
+curl -X POST http://localhost:3000/evaluate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "This is a sample text for evaluation",
+    "customPrompt": "Analyze the sentiment and provide suggestions for improvement:"
+  }'
+```
+
+## Environment Variables
+
+- `OPENAI_API_KEY`: Your OpenAI API key (required)
+- `PORT`: Server port (default: 3000)
+
+## Dependencies
+
+- Express.js - Web framework
+- EJS - Template engine
+- OpenAI - ChatGPT API client
+- Nodemon - Development server (dev dependency)
 
 ## Available Scripts
 
@@ -41,4 +106,4 @@ A modern calcualtor for a modern age. This si a calcualtor that learns with you.
 
 ## License
 
-ISC 
+ISC
